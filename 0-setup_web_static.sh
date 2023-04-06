@@ -2,7 +2,7 @@
 # An installation and configuration of Nginx
 
 #install nginx
-sudo apt-get update
+sudo apt-get update -y
 sudo apt-get install nginx -y
 
 #creating repositories
