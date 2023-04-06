@@ -1,32 +1,22 @@
 #!/usr/bin/env bash
-# An installation and configuration of Nginx
+# A script that installs and configs nginx
 
-#install nginx
-sudo apt-get update -y
+# install nginx
+sudo apt-get update
 sudo apt-get install nginx -y
 
-#creating repositories
-sudo mkdir -p /data/web_static/releases/test/
+# creating the repositories
+sudo mkdir -p /data/web_static/releases/test/ 
 sudo mkdir -p /data/web_static/shared/
+echo " Holberton School" | sudo tee /data/web_static/releases/test/index.html
 
-#creating an html page(A Dummy One)
-echo "<!DOCTYPE html>
-<html>
-  <head>
-  </head>
-  <body>
-    Holberton School
-  </body>
-</html>" | sudo tee /data/web_static/releases/test/index.html
+# creating the symbolic link
+ln -sf /data/web_static/releases/test/ /data/web_static/current
 
-#creating a symbolic link
-sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
-
-#changing directory
+# Give ownership of /data/ to ubuntu and group
 sudo chown -R ubuntu:ubuntu /data/
 
-#setting up the page to be served
-sudo sed -i '/server_name _;/a \ \tlocation /hbnb_static {\n\t\talias /data/web_static/current;\n\t}\n' /etc/nginx/sites-available/default
+# setting up the page to be served
+sudo sed -i '38i\\tlocation /hbnb_static/ {\n\t\talias /data/web_static/current/;\n\t}\n' /etc/nginx/sites-available/default
 
-#restart the server
-sudo service nginx restart
+sudo service nginx start
