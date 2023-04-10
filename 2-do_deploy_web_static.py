@@ -5,7 +5,7 @@ from fabric.api import run, env, put
 import os.path
 
 env.hosts = ['34.232.78.199' , '52.86.106.209']
-env.key_filename = '~/.ssh/school'
+env.key_filename = '~/.ssh/id_rsa'
 env.user = 'ubuntu'
 
 def do_deploy(archive_path):
@@ -23,7 +23,7 @@ def do_deploy(archive_path):
        run("sudo mkdir -p {}".format(remote_path))
        run("sudo tar -xvzf /tmp/{} -C {}".format(compressed_file, remote_path))
        run("sudo rm /tmp/{}".format(compressed_file))
-       run("sudo mv {}/web_static/* {}".format(remote_path, remote_path))
+       run("sudo mv {}web_static/* {}".format(remote_path, remote_path))
        run("sudo rm -rf {}/web_static".format(remote_path))
        run("sudo rm -rf /data/web_static/current")
        run("sudo ln -sf {} {}".format(remote_path, sym_link))
