@@ -1,5 +1,5 @@
-#Resources
-Read or watch:
+# Resources
++ Read or watch:
 
 + [Learn to Code HTML & CSS (until “Creating Lists” included)](https://learn.shayhowe.com/html-css/)
 + [Inline Styles in HTML](https://www.codecademy.com/article/html-inline-styles)
@@ -11,7 +11,7 @@ Read or watch:
 + [center boxes](https://css-tricks.com/centering-css-complete-guide/)
 
 # Resources
-Read or watch:
++ Read or watch:
 
 + [What is a Web Framework?](https://link.medium.com/ghUXxrPwdzb)
 + [A Minimal Application](https://flask.palletsprojects.com/en/1.0.x/quickstart/#a-minimal-application)
@@ -66,9 +66,7 @@ Read or watch:
 + No cross browsers
 
 ### More Info
-```Install Flask
+```Install Flask```
 ```
 $ pip3 install Flask
 ```ruby
-
-
