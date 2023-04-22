@@ -68,5 +68,5 @@
 ### More Info
 ```Install Flask```
 ```
-$ pip3 install Flask
-```ruby
+```$ pip3 install Flask```
+
